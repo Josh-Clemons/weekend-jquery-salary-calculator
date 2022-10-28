@@ -65,15 +65,17 @@ function updateMonthlySalary () {
     for (employee of employees) {
         monthlySalary += (employee.annualSalary/12);
     }
-    // console.log('monthly salary', mSalary);
+    monthlySalary = Number(monthlySalary.toFixed(2));
+    // console.log('monthly salary', monthlySalary);
     return;
 } // end updateMonthlySalary
 
 function render() {
-    Math.round(Number(monthlySalary) * 100) /100;
-    console.log(monthlySalary);
+    // Math.round(monthlySalary * 100) / 100;
+    // console.log(monthlySalary);
     let monthlyString = monthlySalary.toLocaleString('en');
-    console.log(monthlyString);
+    // parseFloat(monthlyString).toFixed(2);
+    // console.log(monthlyString);
 
     //updates employee table
     $('#employeeTableBody').empty();
