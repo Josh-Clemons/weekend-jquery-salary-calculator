@@ -70,6 +70,10 @@ function updateMonthlySalary () {
 } // end updateMonthlySalary
 
 function render() {
+    Math.round(Number(monthlySalary) * 100) /100;
+    console.log(monthlySalary);
+    let monthlyString = monthlySalary.toLocaleString('en');
+    console.log(monthlyString);
 
     //updates employee table
     $('#employeeTableBody').empty();
@@ -88,6 +92,6 @@ function render() {
 
     // updates monthly salary
     $('#monthlySalary').empty();
-    $('#monthlySalary').append(`<tfoot><tr><td>Total Monthly: $${monthlySalary}</td></tr></tfoot>`);
+    $('#monthlySalary').append(`Total Monthly: $${monthlyString}`);
 }  // end render
 

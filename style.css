@@ -1,0 +1,42 @@
+h1 {
+    color: white;
+    background-color: gray;
+    text-align: center;
+    padding: 20px;
+    width: 60%;
+}
+
+
+table {
+    table-layout: fixed;
+    width: 60%;
+    border-collapse: collapse;
+    border: 3px solid black;
+}
+
+th,td {
+    padding: 20px;
+    border: 1px solid black;
+}
+
+th {
+    background-color: gray;
+}
+
+tr:nth-child(even) {
+    background-color: lightgray;
+    border: 1px solid black;
+}
+
+tr:nth-child(odd) {
+    background-color: whitesmoke;
+    border: 1px solid black;
+}
+
+#monthlySalary {
+    font-size: x-large;
+    background-color: white;
+    width: 60%;
+    text-align: right;
+    
+}
