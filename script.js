@@ -2,7 +2,7 @@ $(document).ready(onReady);
 
 let employees = [];
 let idCount = 0;
-
+let monthlySalary = 0;
 
 function onReady () {
     console.log('we have jquery');
@@ -21,9 +21,10 @@ function onReady () {
     // render actions:
     // refresh employees table based on object
     // clear input fields
+    // update monthly costs
 
     render();
-}
+} // end onReady
 
 function addEmployee () {
     // console.log('in addEmployee')
@@ -44,6 +45,7 @@ function addEmployee () {
     $('#titleInput').val('');
     $('#annualSalaryInput').val('');
 
+    updateMonthlySalary ();
     render ();
 } // end addEmployee
 
@@ -54,10 +56,22 @@ function removeEmployee() {
             employees.splice(i, 1);
         }
     }
+    updateMonthlySalary ();
     render ();
-}
+} // end removeEmployee
+
+function updateMonthlySalary () {
+    monthlySalary = 0;
+    for (employee of employees) {
+        monthlySalary += (employee.annualSalary/12);
+    }
+    // console.log('monthly salary', mSalary);
+    return;
+} // end updateMonthlySalary
 
 function render() {
+
+    //updates employee table
     $('#employeeTableBody').empty();
     for (employee of employees) {
         $('#employeeTableBody').append (`
@@ -71,4 +85,9 @@ function render() {
             </tr>
         `)
     }
-}
+
+    // updates monthly salary
+    $('#monthlySalary').empty();
+    $('#monthlySalary').append(`<tfoot><tr><td>Total Monthly: $${monthlySalary}</td></tr></tfoot>`);
+}  // end render
+
