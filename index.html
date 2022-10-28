@@ -4,11 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Salary Calculator</title>
     <script src="jquery-3.6.1.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
-    <header>Salary Calculator</header>
+    <h1>Salary Calculator</h1>
+    <h2>Add Employee</h2>
+    <div>
+        <input id="fNameInput" type="text" placeholder="First Name">
+        <input id="lNameInput" type="text" placeholder="Last Name">
+        <input id="idInput" type="text" placeholder="ID">
+        <input id="titleInput" type="text" placeholder="Title">
+        <input id="annualSalaryInput" type="number" placeholder="Annual Salary">
+    </div>
+    <button id="submitBtn">Submit</button>
+
+    <h2>Employees</h2>
+    <div id="employeeDiv">
+        <table>
+            <head>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>ID</th>
+                    <th>Annual Salary</th>
+                    <th></th>
+                </tr>
+            </head>
+            <body id="employeeTableBody">
+                <tr>
+                    <td>josh</td>
+                    <td>c</td>
+                    <td>23432432</td>
+                    <td>100200</td>
+                    <td>delete</td>
+                </tr>
+            </body>
+            <tfoot>
+            </tfoot>
+        </table>
+    </div>
+
 </body>
 </html>
