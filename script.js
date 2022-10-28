@@ -3,6 +3,7 @@ $(document).ready(onReady);
 let employees = [];
 let idCount = 0;
 let monthlySalary = 0;
+let totalAnnualSalary = 0;
 
 function onReady () {
     console.log('we have jquery');
@@ -62,21 +63,24 @@ function removeEmployee() {
 
 function updateMonthlySalary () {
     monthlySalary = 0;
+    totalAnnualSalary = 0;
+
     for (employee of employees) {
         monthlySalary += (employee.annualSalary/12);
     }
     monthlySalary = Number(monthlySalary.toFixed(2));
     // console.log('monthly salary', monthlySalary);
+    if (monthlySalary > 20000) {
+        $('#monthlySalary').addClass('overLimit');
+        $('#monthlySalary').removeClass('underLimit');
+    } else {
+        $('#monthlySalary').removeClass('overLimit');
+        $('#monthlySalary').addClass('underLimit');
+    }
     return;
 } // end updateMonthlySalary
 
 function render() {
-    // Math.round(monthlySalary * 100) / 100;
-    // console.log(monthlySalary);
-    let monthlyString = monthlySalary.toLocaleString('en');
-    // parseFloat(monthlyString).toFixed(2);
-    // console.log(monthlyString);
-
     //updates employee table
     $('#employeeTableBody').empty();
     for (employee of employees) {
@@ -86,7 +90,7 @@ function render() {
                 <td>${employee.lName}</td>
                 <td>${employee.id}</td>
                 <td>${employee.title}</td>
-                <td>${employee.annualSalary}</td>
+                <td>$${Number(employee.annualSalary).toLocaleString('en')}</td>
                 <td><button class="removeBtn" data-id="${employee.dataID}">Delete</button></td>
             </tr>
         `)
@@ -94,6 +98,6 @@ function render() {
 
     // updates monthly salary
     $('#monthlySalary').empty();
-    $('#monthlySalary').append(`Total Monthly: $${monthlyString}`);
+    $('#monthlySalary').append(`Total Monthly: $${Number(monthlySalary).toLocaleString('en')}`);
 }  // end render
 

@@ -12,7 +12,7 @@
 <body>
     <h1>Salary Calculator</h1>
     <h2>Add Employee</h2>
-    <div>
+    <div id="employeeInputs">
         <input id="fNameInput" type="text" placeholder="First Name">
         <input id="lNameInput" type="text" placeholder="Last Name">
         <input id="idInput" type="text" placeholder="ID">
@@ -23,7 +23,7 @@
 
     <h2>Employees</h2>
     <div id="employeeDiv">
-        <table>
+        <table id="employeeTable">
             <head>
                 <tr>
                     <th>First Name</th>
@@ -40,6 +40,6 @@
             </tfoot>
         </table>
     </div>
-    <div id="monthlySalary"></div>
+    <aside id="monthlySalary" class="underLimit"></aside>
 </body>
 </html>
