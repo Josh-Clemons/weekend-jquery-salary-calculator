@@ -91,7 +91,7 @@ function render() {
                 <td>${employee.id}</td>
                 <td>${employee.title}</td>
                 <td>$${Number(employee.annualSalary).toLocaleString('en')}</td>
-                <td><button class="removeBtn" data-id="${employee.dataID}">Delete</button></td>
+                <td class="tdDelete"><button class="removeBtn" data-id="${employee.dataID}">Delete</button></td>
             </tr>
         `)
     }
