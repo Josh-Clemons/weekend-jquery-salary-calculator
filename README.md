@@ -1,16 +1,17 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Josh's Salary Calculator
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+
 
 Description:
-Create a table that displays first name, last name, ID number, job title, annual salary. Use input fields to generate the information. 
-Once an employee's input fields are completed a submit button will add the information to the table.
-The table will display with a header, then update when new employees are added or deleted.
-A total monthly salary amount will display at the bottom of the page. If that number is greater than $20,000 change the background of the element to red.
+Create a table that displays first name, last name, ID number, job title, annual salary. Use input fields to gather the information for each employee. A submit button will add it to the "Employees" table.
+
+The table will display with a header, footer, and the body will update when new employees are added or deleted. A delete button will generate for each employee when they are added. 
+
+A total monthly salary amount will display at the bottom of the page. If the number is greater than $20,000 the background color will change to red.
 
 
 
