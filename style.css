@@ -6,7 +6,7 @@ h1 {
     background-color: gray;
     text-align: center;
     padding: 20px;
-    width: 100%;
+    width: 90%;
 }
 
 
@@ -86,8 +86,10 @@ input, button {
     justify-content: center;
 }
 
-
-
+#tableFooterRow {
+    height: 40px;
+    background-color: lightgray;
+}
 
 
 
@@ -141,3 +143,4 @@ input, button {
   box-shadow: #3c4fe0 0 3px 7px inset;
   transform: translateY(2px);
 }
+

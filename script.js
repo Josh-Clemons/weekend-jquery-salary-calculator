@@ -95,7 +95,6 @@ function render() {
             </tr>
         `)
     }
-
     // updates monthly salary
     $('#monthlySalary').empty();
     $('#monthlySalary').append(`Total Monthly Payroll: $${Number(monthlySalary).toLocaleString('en')}`);
