@@ -72,10 +72,8 @@ function updateMonthlySalary () {
     // console.log('monthly salary', monthlySalary);
     if (monthlySalary > 20000) {
         $('#monthlySalary').addClass('overLimit');
-        $('#monthlySalary').removeClass('underLimit');
     } else {
         $('#monthlySalary').removeClass('overLimit');
-        $('#monthlySalary').addClass('underLimit');
     }
     return;
 } // end updateMonthlySalary
