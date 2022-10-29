@@ -98,6 +98,6 @@ function render() {
 
     // updates monthly salary
     $('#monthlySalary').empty();
-    $('#monthlySalary').append(`Total Monthly: $${Number(monthlySalary).toLocaleString('en')}`);
+    $('#monthlySalary').append(`Total Monthly Payroll: $${Number(monthlySalary).toLocaleString('en')}`);
 }  // end render
 
