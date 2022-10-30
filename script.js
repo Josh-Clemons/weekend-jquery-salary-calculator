@@ -11,21 +11,33 @@ function onReady () {
     // add employee when 'Submit' button is clicked
     // remove employee when corresponding 'delete' button is clicked
     $('#submitBtn').on('click', addEmployee)
-    $('#employeeTableBody').on('click', '.removeBtn', removeEmployee)
+    // $('#employeeTableBody').on('click', '.removeBtn', removeEmployee)
 
-    // state actions:
-    // add or remove employee information from employees object
-    // employee info includes First Name, Last Name, ID, Title, Annual Salary
-    // calculate monthly salary from employees object
+    // the below event handler adds a confirm to continue when clicking delete on an employee
+    $(function() {    
+        $('#employeeTableBody').on('click', '.removeBtn', function () {
+            if (confirm("Delete?")) {
+                removeEmployee($(this).attr('data-id'));
+            }
+        });
+    });
 
-
-    // render actions:
-    // refresh employees table based on object
-    // clear input fields
-    // update monthly costs
+    $('h1').click(redirectTest);
 
     render();
 } // end onReady
+
+
+
+function redirectTest () {
+    location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+}
+
+
+// state actions:
+// add or remove employee information from employees object
+// employee info includes First Name, Last Name, ID, Title, Annual Salary
+// calculate monthly salary from employees object
 
 function addEmployee () {
     // console.log('in addEmployee')
@@ -50,10 +62,10 @@ function addEmployee () {
     render ();
 } // end addEmployee
 
-function removeEmployee() {
+function removeEmployee( id ) {
     // console.log('in remove');
     for (let [i, employee] of employees.entries()) {
-        if (employee.dataID == $(this).attr('data-id')) {
+        if (employee.dataID == id) {
             employees.splice(i, 1);
         }
     }
@@ -78,6 +90,12 @@ function updateMonthlySalary () {
     return;
 } // end updateMonthlySalary
 
+
+
+// render actions:
+// refresh employees table based on object
+// clear input fields
+// update monthly costs
 function render() {
     //updates employee table
     $('#employeeTableBody').empty();
@@ -89,7 +107,9 @@ function render() {
                 <td>${employee.id}</td>
                 <td>${employee.title}</td>
                 <td>$${Number(employee.annualSalary).toLocaleString('en')}</td>
-                <td class="tdDelete"><button class="removeBtn" data-id="${employee.dataID}">Delete</button></td>
+                <td class="tdDelete">
+                    <button class="removeBtn" data-id="${employee.dataID}">Delete</button>
+                </td>
             </tr>
         `)
     }
