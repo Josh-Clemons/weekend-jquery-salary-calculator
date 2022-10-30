@@ -1,7 +1,33 @@
 $(document).ready(onReady);
 
-let employees = [];
-let idCount = 0;
+let employees = [
+    {
+        fName: 'Jen',
+        lName: 'Barber',
+        title: 'Team Lead',
+        id: '4521',
+        annualSalary: 80000,
+        dataID: 0
+    },
+    {
+        fName: 'Maurice',
+        lName: 'Moss',
+        title: 'Support Team',
+        id: '8724',
+        annualSalary: 58000,
+        dataID: 1
+    },
+    {
+        fName: 'Roy',
+        lName: 'Smith',
+        title: 'Quality Assurance',
+        id: '9623',
+        annualSalary: 48000,
+        dataID: 2
+    }
+
+];
+let idCount = 3;
 let monthlySalary = 0;
 let totalAnnualSalary = 0;
 
@@ -29,9 +55,6 @@ function onReady () {
 
 
 
-function redirectTest () {
-    location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-}
 
 
 // state actions:
@@ -58,7 +81,6 @@ function addEmployee () {
     $('#titleInput').val('');
     $('#annualSalaryInput').val('');
 
-    updateMonthlySalary ();
     render ();
 } // end addEmployee
 
@@ -69,7 +91,6 @@ function removeEmployee( id ) {
             employees.splice(i, 1);
         }
     }
-    updateMonthlySalary ();
     render ();
 } // end removeEmployee
 
@@ -90,6 +111,9 @@ function updateMonthlySalary () {
     return;
 } // end updateMonthlySalary
 
+function redirectTest () {
+    location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+}
 
 
 // render actions:
@@ -97,6 +121,7 @@ function updateMonthlySalary () {
 // clear input fields
 // update monthly costs
 function render() {
+    updateMonthlySalary ();
     //updates employee table
     $('#employeeTableBody').empty();
     for (employee of employees) {

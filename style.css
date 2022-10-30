@@ -1,9 +1,20 @@
+
+body {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("background.png");
+    background-size: cover;
+}
+
 h1 {
-    color: white;
-    background-color: gray;
+    color: seashell;
+    background-color: darkslategray;
+    border-radius: 90%;
     text-align: center;
     padding: 20px;
-    width: 90%;
 }
 
 table {
@@ -13,7 +24,7 @@ table {
     border: 3px solid black;
 }
 
-th,td {
+td {
     font-size: large;
     text-align: center;
     padding: 5px;
@@ -22,7 +33,12 @@ th,td {
 }
 
 th {
-    background-color: gray;
+    background-color: darkslategray;
+    color: seashell;
+    font-size: large;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid black;
 }
 
 tr:nth-child(even) {
@@ -38,6 +54,8 @@ tr:nth-child(odd) {
 
 input {
     margin: 5px;
+    height: 30px;
+    width: 300px;
 }
 
 input:focus {
@@ -78,6 +96,7 @@ button:active {
     float: right;
     border: 2px solid darkgray;
     border-radius: 3px;
+    align-self: flex-end;
 }
 
 .overLimit#monthlySalary{
